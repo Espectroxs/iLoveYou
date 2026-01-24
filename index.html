@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espectro OS</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+<div class="scanlines"></div>
+
+<div class="boot" id="boot">
+    <p id="bootText"></p>
+</div>
+
+<div class="loading hidden" id="loading">
+    <p id="scanText">SCANNING NETWORK...</p>
+    <div class="bar"><div class="progress"></div></div>
+    <p class="log" id="log"></p>
+</div>
+
+<div class="terminal hidden" id="terminal">
+    <div id="output"></div>
+    <div class="input-line">
+        <span>> </span>
+        <input type="text" id="command" autofocus>
+    </div>
+</div>
+
+<audio id="sound" src="terminal.mp3"></audio>
+
+<script src="matrix.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

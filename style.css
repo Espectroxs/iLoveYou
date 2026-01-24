@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root { --green:#00ff00; }
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    background:black;
+    color:var(--green);
+    font-family:'Share Tech Mono', monospace;
+    overflow:hidden;
+}
+
+/* MATRIX */
+canvas { position:fixed; inset:0; z-index:-2; }
+
+/* SCANLINES */
+.scanlines {
+    position:fixed;
+    inset:0;
+    background:repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events:none;
+}
+
+/* BOOT */
+.boot, .loading {
+    position:absolute;
+    top:40%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:left;
+    width:80%;
+}
+
+/* LOADING */
+.bar {
+    width:280px;
+    height:10px;
+    border:1px solid var(--green);
+    margin:10px 0;
+}
+.progress {
+    height:100%;
+    width:0;
+    background:var(--green);
+    animation:load 4s forwards;
+}
+@keyframes load { to{width:100%;} }
+
+.log { opacity:.8; font-size:14px; }
+
+/* TERMINAL */
+.hidden { display:none; }
+
+.terminal {
+    position:absolute;
+    top:10%;
+    left:5%;
+    width:90%;
+}
+
+#output p { margin-bottom:4px; }
+
+.input-line {
+    display:flex;
+}
+.input-line input {
+    background:black;
+    border:none;
+    color:var(--green);
+    outline:none;
+    flex:1;
+}
+
+/* STEALTH */
+body.stealth {
+    background:#050505;
+    color:#777;
+}
+body.stealth canvas,
+body.stealth .scanlines {
+    display:none;
+}
